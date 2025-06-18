@@ -1,0 +1,436 @@
+    #main-title {
+  cursor: pointer;
+}
+    
+   body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #0f1624;
+  margin: 0;
+}
+
+
+  header {
+  background-color: #0f1c2e;
+  color: #1e90ff;
+  width: 100%;
+  padding: 1em;
+  text-align: center;
+  border-bottom: 2px solid #1e90ff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+
+header h1 {
+  font-size: 2em;
+  color: #e9ff1e;
+  margin: 0;
+  cursor: pointer;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+}
+
+.amarillo {
+  color: #ffd61e; /* amarillo */
+}
+
+.azul {
+  color: #1e90ff; /* azul */
+}
+
+    
+   main {
+  background-color: #0f1624;
+  border-radius: 16px;
+  box-shadow: none;
+  width: 90%;
+  max-width: 500px;
+}
+
+   .game-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5em;
+  padding: 2em;
+}
+
+    .game {
+  background: #192133;
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  color: #fff;
+}
+
+.game:hover {
+  transform: scale(1.05);
+}
+
+    .disabled {
+      background: #bdbdbd !important;
+      cursor: default;
+    }
+    .disabled:hover {
+      transform: none;
+    }
+    .hidden {
+      display: none;
+      
+    }
+    #top10-game {
+      display: none;
+     background: transparent;
+      padding: 2em;
+      margin-top: -15em;
+      box-shadow: none;
+    }
+    #top10-game.active {
+      display: block;
+    }
+    #top10-game h2 {
+      margin-top: 0;
+      color: #ffffff;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: #e53935;
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    #inputs input {
+      width: 100%;
+      padding: 0.8em;
+      margin: 0.5em 0;
+      border-radius: 8px;
+      border: 2px solid #90caf9;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.1em;
+      background: #e3f2fd;
+      color: #0d47a1;
+    }
+    #guess-input {
+      width: 100%;
+      padding: 0.8em;
+      margin-top: 1em;
+      border-radius: 8px;
+      border: 2px solid #1976d2;
+      font-size: 1.1em;
+    }
+   .game {
+  background: #192133;
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  color: #fff;
+}
+
+.game:hover {
+  transform: scale(1.05);
+}
+
+    .correct {
+      background-color: #c8e6c9 !important;
+      border-color: #2e7d32 !important;
+    }
+    .already-entered {
+      background-color: #fff176 !important;
+    }
+    #win-message {
+      background: #4caf50;
+      color: #fff;
+      padding: 1em;
+      border-radius: 8px;
+      margin-top: 1em;
+      font-weight: bold;
+      text-align: center;
+      display: none;
+    }
+ .rank-row {
+  display: flex;
+  align-items: center;
+  padding: 0.6em 1em;
+  margin-bottom: 6px;
+  font-weight: bold;
+  background: #494b50;
+  border-radius: 6px;
+  color: rgb(0, 0, 0);
+  gap: 10px;
+  font-size: 1.1em;
+}
+
+.rank-row.correct {
+  background: #81c784;
+}
+
+.rank-num {
+  width: 28px;
+  text-align: right;
+  margin-right: 10px;
+  color: #000000;
+}
+.wordle-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 20px auto;
+}
+
+.wordle-fila {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.wordle-cell {
+  width: 48px;
+  height: 48px;
+  background-color: #1e1e2e;
+  border: 2px solid #555;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 6px;
+  margin: 100px auto;
+  max-width: 400px;
+}
+
+.key {
+  padding: 10px;
+  background: #eee;
+  color: #000;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.key:hover {
+  background: #ccc;
+}
+
+
+
+
+
+
+#impostor-game {
+  display: none;
+  padding: 2em;
+  color: #fff;
+  text-align: center;
+}
+
+#impostor-game.active {
+  display: block;
+}
+
+.jugadores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.jugador {
+  background-color: #192133;
+  padding: 1em;
+  border: 2px solid #1e90ff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  font-weight: bold;
+  color: white;
+}
+
+.jugador:hover {
+  background-color: #1e2a44;
+  transform: scale(1.05);
+}
+
+.jugador.correcto {
+  background-color: #66bb6a;
+  border-color: #2e7d32;
+}
+
+.jugador.impostor {
+  background-color: #e53935;
+  border-color: #b71c1c;
+}
+
+.resultado {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.categoria-info {
+  margin-top: 15px;
+  font-style: italic;
+  color: #ccc;
+}
+.jugador-foto {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid #1e90ff;
+}
+
+.jugador-nombre {
+  font-weight: bold;
+  font-size: 0.9em;
+}
+#impostor-game {
+  margin-top: -20em; 
+}
+#wordle-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+}
+#wordle-win {
+  background: #66bb6a;
+  color: #fff;
+  padding: 1em;
+  border-radius: 12px;
+  margin-top: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.3em;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+#wordle-lose {
+  background: #e74c3c;
+  color: #fff;
+  padding: 1em;
+  border-radius: 12px;
+  margin-top: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.3em;
+  animation: shake 0.6s ease-in-out;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* === Futbol List A styles === */
+.flista-header {
+  display: flex; align-items: center; justify-content: space-between;
+  background: #2a004e; padding: 0.5em 1em;
+}
+.flista-title {
+  color: #fff; font-size: 1.4em; letter-spacing: 1px;
+}
+.flista-nav {
+  background: none; border: none; color: #8a4fff;
+  font-weight: bold; cursor: pointer;
+}
+.flista-question {
+  color: #fff; margin: 1em;
+  text-align: center; font-size: 1.1em;
+}
+.flista-status {
+  display: flex; align-items: center;
+  gap: 1em; justify-content: center; margin-bottom: 1em;
+}
+.circle-chart {
+  width: 80px; height: 80px;
+}
+.circle-bg {
+  fill: none; stroke: #444; stroke-width: 2.8;
+}
+.circle {
+  fill: none; stroke: #8a4fff; stroke-width: 2.8;
+  stroke-linecap: round; transition: stroke-dasharray 0.3s ease;
+}
+.circle-text {
+  fill: #fff; font-size: 0.5em; text-anchor: middle;
+}
+.reveal-btn {
+  background: #ffd700; border: none;
+  padding: 0.4em 0.8em; border-radius: 4px;
+  font-weight: bold; cursor: pointer;
+}
+#flista-input {
+  width: calc(100% - 2em);
+  margin: 0 auto 1em;
+  display: block; padding: 0.6em 1em;
+  border-radius: 4px; border: 2px solid #8a4fff;
+  background: #1e003c; color: #fff;
+}
+.found-list, .suggestions-list {
+  max-width: 400px; margin: 0.5em auto;
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.found-list .item {
+  background: #66bb6a; color: #fff;
+  padding: 0.5em 0.8em; border-radius: 4px;
+}
+.suggestions-list .item {
+  background: #555; color: #fff;
+  padding: 0.5em 0.8em; border-radius: 4px;
+  cursor: pointer; user-select: none;
+}
+.suggestions-list .item:hover {
+  background: #777;
+}
+/* Decoys salen grises en found-list */
+.found-list .item.decoy {
+  background: #555;
+  color: #fff;
+}
