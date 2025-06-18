@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlayGoal</title>
+  <link rel="stylesheet" href="css/style.css">
+ </head>
+ <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<body>
+  <header>
+<h1 id="main-title">
+  <span class="amarillo">PLAY</span><span class="azul">GOAL</span>
+</h1>
+  </header>
+  <main>
+    <div id="menu-principal" class="game-list">
+      <div class="game" onclick="mostrarJuego('top10')">
+        <h2>PLAY</h2>
+        <p>Top 10</p>
+      </div>
+     <div class="game" onclick="mostrarJuego('Wordle')">
+        <h2>PLAY</h2>
+        <p>Wordle </p>
+      </div>
+      <div class="game" onclick="mostrarJuego('Impostor')">
+        <h2>PLAY</h2>
+        <p>Impostor </p>
+      </div>
+    <div class="game" onclick="mostrarJuego('TopList')">
+        <h2>PLAY</h2>
+        <p>Futbol List A </p>
+      </div>
+    </div>
+
+    <div id="top10-game">
+      <h2>TOP 10 GOLEADORES CHAMPIONS</h2>
+      <div id="inputs"></div>
+      <input id="guess-input" type="text" placeholder="Escribe un nombre...">
+      <div id="win-message">¡Has adivinado todos los jugadores! 🎉</div>
+    </div>
+
+    <div id="wordle-game" class="hidden">
+      <button class="close-btn" onclick="volverMenu()">×</button>
+      <div id="wordle-grid"></div>
+      <input id="wordle-input" type="text" maxlength="20" placeholder="Jugador...">
+      <div id="keyboard" class="keyboard"></div>
+      <div id="wordle-win" class="hidden">¡Correcto! 🎉</div>
+      <div id="wordle-lose" class="hidden">¡Se acabaron los intentos! 😢</div>
+    </div>
+
+    <div id="impostor-game" class="hidden">
+    <h2 class="titulo-juego">FUTBOL IMPOSTOR</h2>
+    <div id="jugadores-grid" class="jugadores-grid"></div>
+    <div id="resultado" class="resultado"></div>
+    <p class="categoria-info">Today's category was: <span id="categoria"></span></p>
+    <button id="confirmar-seleccion" class="hidden">Confirmar Selección</button>
+  </div>
+  
+<div id="toplist-game" class="hidden">
+  <button class="close-btn" onclick="volverMenu()">×</button>
+  <div class="flista-header">
+    <button class="flista-nav" onclick="previousDay()">« PREV</button>
+    <h2 class="flista-title">FUTBOL LIST A</h2>
+    <button class="flista-nav" onclick="nextDay()">NEXT »</button>
+  </div>
+  <p class="flista-question">
+    Players to have made an appearance with Scott Carson at Manchester City
+  </p>
+  <div class="flista-status">
+    <svg class="circle-chart" viewBox="0 0 36 36">
+      <path class="circle-bg"
+            d="M18 2.0845
+               a 15.9155 15.9155 0 0 1 0 31.831
+               a 15.9155 15.9155 0 0 1 0 -31.831"/>
+      <path id="circle-progress" class="circle"
+            stroke-dasharray="0, 100"
+            d="M18 2.0845
+               a 15.9155 15.9155 0 0 1 0 31.831
+               a 15.9155 15.9155 0 0 1 0 -31.831"/>
+      <text x="18" y="20.35" class="circle-text" id="progress-text">0/19</text>
+    </svg>
+    <button id="reveal-btn" class="reveal-btn" onclick="revealAnswers()">Reveal Answers</button>
+  </div>
+  <input id="flista-input" type="text" placeholder="Type a name…" autocomplete="off"/>
+  <div id="found-list" class="found-list"></div>
+  <div id="suggestions-list" class="suggestions-list"></div>
+</div>
+
+
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>
